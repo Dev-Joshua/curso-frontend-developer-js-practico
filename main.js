@@ -4,7 +4,7 @@ const desktopMenu = document.querySelector(".desktop-menu");
 const menuBurgerIcon = document.querySelector(".menu-burger");
 const mobileMenu = document.querySelector(".mobile-menu");
 const menuCarritoIcon = document.querySelector(".navbar-shopping-cart");
-const aside = document.querySelector(".product-detail");
+const shoppingCartContainer = document.querySelector("#shoppingCartContainer");
 const cardsContainer = document.querySelector(".cards-container");
 
 //Utilizo su metodo addEventListener para ejecutar una funcion cuando se de clic al elemento
@@ -15,21 +15,21 @@ menuCarritoIcon.addEventListener("click", toggleCarritoAside);
 //Esta funcion hace aparecer o desaparecer la clase .inactive. Se ejecuta cada vez que den clic
 function toggleDesktopMenu() {
   // console.log("Click");
-  const isAsideOpen = !aside.classList.contains("inactive");
+  const isAsideOpen = !shoppingCartContainer.classList.contains("inactive");
 
   if (isAsideOpen) {
     //Si esta abierto agregar la clase inactive al aside
-    aside.classList.add("inactive");
+    shoppingCartContainer.classList.add("inactive");
   }
   desktopMenu.classList.toggle("inactive");
 }
 
 //Aparece o desaparece el menu mobile
 function toggleMobileMenu() {
-  const isAsideOpen = !aside.classList.contains("inactive");
+  const isAsideOpen = !shoppingCartContainer.classList.contains("inactive");
 
   if (isAsideOpen) {
-    aside.classList.add("inactive");
+    shoppingCartContainer.classList.add("inactive");
   }
   //Ejecuta la funcion classList.toggle que quita o pone la clase 'inactive' dependiendo si la tiene o no
   mobileMenu.classList.toggle("inactive");
@@ -44,7 +44,7 @@ function toggleCarritoAside() {
     //Si esta abierto agregar la clase inactive al mobile-menu para cerrarlo
     mobileMenu.classList.add("inactive");
   }
-  aside.classList.toggle("inactive");
+  shoppingCartContainer.classList.toggle("inactive");
 }
 
 //Este array vacio se le agregara un objeto(productos) con .push
